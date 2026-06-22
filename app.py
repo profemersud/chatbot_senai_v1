@@ -144,8 +144,8 @@ section[data-testid="stSidebar"] label {
 # ==================================================
 
 logo_html = ""
-if os.path.exists("assets/logo_senai.png"):
-    with open("assets/logo_senai.png", "rb") as img:
+if os.path.exists("logo_senai.png"):
+    with open("logo_senai.png", "rb") as img:
         logo_base64 = base64.b64encode(img.read()).decode()
     logo_html = f'<img src="data:image/png;base64,{logo_base64}" width="240">'
 
@@ -166,8 +166,8 @@ st.markdown(
 
 with st.sidebar:
     # GIF do Robô mais interessante
-    if os.path.exists("assets/robot.gif"):
-        with open("assets/robot.gif", "rb") as f:
+    if os.path.exists("robot.gif"):
+        with open("robot.gif", "rb") as f:
             gif_base64 = base64.b64encode(f.read()).decode()
         st.markdown(
             f"""
@@ -224,8 +224,8 @@ if not nvidia_api_key:
 @st.cache_resource(show_spinner="📘 Sincronizando base de conhecimento SENAI-SP...")
 def criar_vectorstore():
     arquivos = [
-        "documentos/Regimento_comum_extraido.txt",
-        "documentos/Perguntas_Respostas_SENAI.txt"
+        "Regimento_comum_extraido.txt",
+        "Perguntas_Respostas_SENAI.txt"
     ]
     
     documentos = []
